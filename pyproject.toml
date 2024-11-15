@@ -4,4 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "lapx>=0.5.11",
+    "opencv-python>=4.10.0.84",
+    "shapely>=2.0.6",
+    "ultralytics>=8.3.31",
+]
