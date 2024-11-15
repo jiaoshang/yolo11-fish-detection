@@ -16,6 +16,7 @@ except Exception as ex:
     st.error("Can't load YOLO model")
     st.error(ex)
 
+# TODO setup default image to deal with NameError: name 'uploaded_image' is not defined
 col1, col2 = st.columns(2)
 
 with col1:
