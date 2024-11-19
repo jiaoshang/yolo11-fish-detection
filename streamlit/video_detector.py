@@ -3,7 +3,6 @@ import streamlit as st
 
 from model import load_model_as_object_counter, load_model
 
-
 def _save_uploaded_video(video_bytes) -> str:
     file_path = "streamlit/data/uploaded_video/upload." + video_bytes.name.split('.')[-1]
     with open(file_path, 'wb') as out:
@@ -11,7 +10,7 @@ def _save_uploaded_video(video_bytes) -> str:
     return file_path
 
 def _display_detected_frame(file_path: str):
-    capture = cv2.VideoCapture(file_path)  # TODO whether it's possible for capture from cache
+    capture = cv2.VideoCapture(file_path)
     st_frame = st.empty()
     while capture.isOpened():
         if not st.session_state.state:
@@ -29,8 +28,7 @@ def _display_detected_frame(file_path: str):
             st_frame.image(annotated_frame,
                            caption='Detected Video',
                            channels="BGR",
-                           use_container_width=True
-                           )
+                           use_container_width=True)
     capture.release()
 
 
